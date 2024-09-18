@@ -16,8 +16,7 @@ function getHumanChoice() {
     return answer;
 }
 
-computerScore = 0;
-humanScore = 0;
+
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanChoice();
@@ -52,6 +51,26 @@ function playRound(humanChoice, computerChoice) {
     }
   
 }
-playRound();
-console.log(humanScore);
-console.log(computerScore);
+
+
+
+function playGame() {
+
+    computerScore = 0;
+    humanScore = 0;
+
+    for (i = 0; i < 5; i++)
+        playRound();
+
+    if (humanScore > computerScore) {
+        console.log("Congratulations, you win!!");
+    } 
+    else if (computerScore > humanScore){
+        console.log("Loser!!! Bahaha");
+    }
+    else {
+        console.log("It's a damned tie! :(");
+    }
+}
+
+playGame();
